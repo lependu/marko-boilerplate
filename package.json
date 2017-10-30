@@ -8,11 +8,16 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "babel-preset-env": "1.6.1",
     "eslint": "4.2.0",
     "eslint-config-prettier": "2.3.0",
     "eslint-plugin-prettier": "2.1.2",
+    "lasso": "2.11.20",
     "lasso-autoprefixer": "2.0.0",
-    "marko-starter-babel": "1.0.2",
+    "lasso-babel-transform": "1.0.1",
+    "lasso-require": "3.4.9",
+    "lasso-marko": "2.3.1",
+    "marko-cli": "2.1.2",
     "prettier": "1.5.2"
   },
   "dependencies": {
@@ -24,7 +29,7 @@
     "build": "rm -rf .cache && NODE_ENV=production marko-starter build",
     "serve": "NODE_ENV=production marko-starter serve-static",
     "lint": "eslint src/",
-    "test": "npm run lint",
+    "test": "marko test",
     "prettier": "prettier src/**/*.{js,css,less} *.js --write"
   },
   "eslintConfig": {
