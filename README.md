@@ -1,5 +1,22 @@
-# Marko Starter Demo
-This repo demos the basic features of [`marko-starter`](https://github.com/marko-js/marko-starter).
+# Marko Boilerplate
+
+This repo demos how
+  - [`marko-starter`](https://github.com/marko-js/marko-starter).
+  - [`marko-cli`](https://github.com/marko-js/marko-cli).
+plays together with a minimal `lasso` config and 2 basic test included in `src/components/click-count`.
+
+## Prepare
+You need to ensure that chrome based mocha tests can run in your envitonment.
+For start take a look at the [`puppeteer`](https://github.com/GoogleChrome/puppeteer) project.
+
+Tested with `node:8.8.1-slim` docker based docker image on `debian 8.9` host. `Dockerfile` included.
+1. Build the container: `$docker build -t [image-name] .`
+2. Run the container:
+`$ docker run -ti [--rm] -v $(pwd):/home/node/app -p [host-port]:8080 [image-name] -c "[your commands]"`
+
+Be advised that the image size is ~ 600Mb + it will take ~400Mb more in the `./node_modules` after install.
+
+I am not intend to test it in Windows or Mac environments, but any PR appreciated.
 
 ## Install
 
@@ -26,27 +43,20 @@ Build the project in production mode:
 npm run build
 ```
 
-By default, the generated static site will be placed in `dist/`.
+## Test
+```bash
+npm run lint
+```
+Eslint
 
-## Feature Demos
+```bash
+npm run test
+```
+Test with mocha.
 
-### Live reload
-
-Change a file and the server will restart and the browser will refresh.  Hot reload is enabled for certain files.
-
-### Components
-
-See example components and how they can be scoped to pages or the whole site.
-
-### Routing
-
-Learn to create routes and use route parameters.
-
-### Layouts
-
-Learn to create components that can be passed content and include that content in their own template.
-
-### Styles and Images
-
-Learn how to use styles within a component and how to use resources (like images) in a component.
+## Known issues
+I could not make `Element.click()` test to work. I gess it is related with
+[this](https://github.com/GoogleChrome/puppeteer/pull/1125) or
+[this](https://github.com/GoogleChrome/puppeteer/issues/1082)
+puppeteer issue. Any help appreciated.
 

@@ -3,7 +3,6 @@
 # Node.js
 node_modules/
 npm-debug.log
-package-lock.json
 
 # Marko.js
 .cache
@@ -18,9 +17,6 @@ coverage
 
 # Docker
 *.env
-Deploy
-docker-compose.yml
-nginx
 
 # Editor
 .vimrc

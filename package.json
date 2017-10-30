@@ -1,12 +1,13 @@
 {
-  "name": "marko-starter-demo",
-  "version": "1.0.9",
-  "description": "Demo of how to build an app using marko-starter",
+  "name": "marko-boilerplate",
+  "version": "0.1.0",
+  "description": "Demo of how to build project with marko-starter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marko-js-samples/marko-starter-demo"
+    "url": "https://github.com/lependu/marko-boilerplate"
   },
   "license": "MIT",
+  "private": true,
   "devDependencies": {
     "babel-preset-env": "1.6.1",
     "eslint": "4.2.0",
