@@ -1,0 +1,22 @@
+.git
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# Marko.js
+.cache
+dist
+*.marko.js
+.marko-cli
+**/test
+
+# nyc
+.nyc_output
+coverage
+
+# Docker
+*.env
+
+# Editor
+.vimrc
