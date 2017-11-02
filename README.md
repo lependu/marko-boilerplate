@@ -56,8 +56,18 @@ npm run test
 Test with mocha.
 
 ## Known issues
+
+### Handling click() events in tests
 I could not make `Element.click()` test to work. I guess it is related with
 [this](https://github.com/GoogleChrome/puppeteer/pull/1125) or
 [this](https://github.com/GoogleChrome/puppeteer/issues/1082)
 puppeteer issue. Any help appreciated.
 
+### Lasso incompability
+The `marko-starter@2.x.x` has `lasso@3.0.0-beta.x` dependency.
+
+While `marko-cli@2.x.x` has `lassso@2.x.x` dependency.
+
+Thats why we have to add `"lasso": "*"` in the `package.json`
+
+Which is a bit messy, but works.
