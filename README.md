@@ -1,10 +1,12 @@
 # Marko Boilerplate
 
 This repo demos how
-  - [`marko-starter`](https://github.com/marko-js/marko-starter).
-  - [`marko-cli`](https://github.com/marko-js/marko-cli).
+  - [`marko@4.5.6`](https://github.com/marko-js/marko)
+  - [`marko-starter@2.0.2`](https://github.com/marko-js/marko-starter)
+  - [`marko-cli@2.2.1`](https://github.com/marko-js/marko-cli)
 
-plays together with a minimal `lasso` config and 2 basic test included in `src/components/click-count`.
+plays together.
+Minimal `lasso` config and few basic test with nyc coverage included.
 
 ## Prepare
 You need to ensure that chrome based mocha tests can run in your envitonment.
@@ -28,32 +30,37 @@ I am not intend to test it in Windows or Mac environments, but any PR appreciate
 ## Starting the server
 
 ```bash
-npm start
+$ npm start
 ```
 
 Start the server in production mode (minification enabled, etc.):
 
 ```bash
-NODE_ENV=production npm start
+$ NODE_ENV=production npm start
 ```
 
 ## Build a static site
 Build the project in production mode:
 
 ```bash
-npm run build
+$ npm run build
 ```
 
-## Test
+## Tests
 ```bash
-npm run lint
+$ npm run lint
 ```
 Eslint
 
 ```bash
-npm run test
+$ npm run test
 ```
 Test with mocha.
+```bash
+$ npm run coverage
+```
+Generates istanbul coverage report into `coverage` directory.
+For further configuration take a look at the `.nycrc` file.
 
 ## Known issues
 
@@ -64,10 +71,10 @@ I could not make `Element.click()` test to work. I guess it is related with
 puppeteer issue. Any help appreciated.
 
 ### Lasso incompability
-The `marko-starter@2.x.x` has `lasso@3.0.0-beta.x` dependency.
+The `marko-starter@2.x.x` has `lasso@3.0.0-beta.x` dependency,
 
-While `marko-cli@2.x.x` has `lassso@2.x.x` dependency.
+while `marko-cli@2.x.x` has `lassso@2.x.x` dependency.
 
 Thats why we have to add `"lasso": "*"` in the `package.json`
 
-Which is a bit messy, but works.
+Which is a bit messy, but works...
