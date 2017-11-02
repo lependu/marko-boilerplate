@@ -17,6 +17,7 @@
     "lasso-autoprefixer": "2.0.0",
     "lasso-babel-transform": "1.0.1",
     "marko-cli": "2.1.2",
+    "nyc": "11.3.0",
     "prettier": "1.5.2"
   },
   "dependencies": {
@@ -29,6 +30,7 @@
     "serve": "NODE_ENV=production marko-starter serve-static",
     "lint": "eslint src/",
     "test": "marko test",
+    "coverage": "nyc marko test",
     "prettier": "prettier src/**/*.{js,css,less} *.js --write"
   },
   "eslintConfig": {
