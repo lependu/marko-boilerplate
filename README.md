@@ -77,4 +77,10 @@ while `marko-cli@2.x.x` has `lassso@2.x.x` dependency.
 
 Thats why we have to add `"lasso": "*"` in the `package.json`
 
-Which is a bit messy, but works...
+~~Which is a bit messy, but works...~~
+
+Which works until you `$ npm i ...` something. After that you have to
+
+`$ npm i lasso@3.0.0-beta.x` before run `marko-starter` commands and
+
+`$ npm i lasso@2` before run tests.
