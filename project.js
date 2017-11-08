@@ -1,42 +1,50 @@
 const MarkoStarter = require('marko-starter')
+const homeTemplate = require('./src/templates/home.marko')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = MarkoStarter.projectConfig({
   routePathPrefix: '/',
-  lassoConfig: {
-    bundlingEnabled: isProduction,
-    fingerprintsEnabled: isProduction,
-    minify: isProduction,
-    require: {
-      transforms: [
-        {
-          transform: 'lasso-babel-transform'
-        }
-      ]
-    },
-    plugins: [
-      'lasso-marko',
-      {
-        plugin: "lasso-autoprefixer",
-        config: {
-          browsers: [
-             "Android >= 2.3",
-             "BlackBerry >= 7",
-             "Chrome >= 9",
-             "Firefox >= 4",
-             "Explorer >= 9",
-             "iOS >= 5",
-             "Opera >= 11",
-             "Safari >= 5",
-             "OperaMobile >= 11",
-             "OperaMini >= 6",
-             "ChromeAndroid >= 9",
-             "FirefoxAndroid >= 4",
-             "ExplorerMobile >= 9"
+  routes: [
+    {
+      path: '/',
+      handler: (input, out) => {
+        let page = {
+          lang: 'en',
+          title: 'Hello world!',
+          meta: [
+            {
+              tagName: 'link',
+              attributes: {
+                rel: 'alternate',
+                hreflang: 'de',
+                href: 'http://example.com/de'
+              }
+            }
           ]
         }
-      },
-    ]
-  }
+        homeTemplate.render(page, out)
+      }
+    },
+    {
+      path: '/de',
+      handler: (input, out) => {
+        let page = {
+          lang: 'de',
+          title: 'Hallo Welt!',
+          meta: [
+            {
+              tagName: 'link',
+              attributes: {
+                rel: 'alternate',
+                hreflang: 'en',
+                href: 'http://example.com'
+              }
+            }
+          ]
+        }
+        homeTemplate.render(page, out)
+      }
+    }
+  ]
 });
